@@ -16,6 +16,7 @@ body {
 }
 
 #content {
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -50,4 +51,16 @@ button {
    font-size: 15px;
    color: rgba(255,255,255,1);
    font-weight: bold;
+}
+
+footer {
+    margin-top: 30px;
+    font-family: Sans-Serif;
+    font-size: 13px;
+    color: #555;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    text-align: center;
 }
