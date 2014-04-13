@@ -12,16 +12,6 @@
 
 (enable-console-print!)
 
-;; So it seems JS interop from Cljs is awful
-;; why else would I need to define such a function (?)
-;; from: https://gist.github.com/mjg123/1098417
-(defn make-js-map
-  "makes a javascript map from a clojure one"
-  [cljmap]
-  (let [out (js-obj)]
-    (doall (map #(aset out (name (first %)) (second %)) cljmap))
-    out))
-
 (def grid-size {:w 40 :h 20}) ; how many boxes in x / y
 (def box-size 18) ; size of a box in x / y
 (def box-margin 1)
@@ -66,7 +56,7 @@
           p {:id n :style s}
           
           ; Create Element 
-          e (dom/createDom "div" (make-js-map p))
+          e (dom/createDom "div" (clj->js p))
           ; Append to parent element
           o (goog.dom.query "#content")]
       (dom/append (first o) e))))
